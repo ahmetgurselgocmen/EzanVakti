@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="16dp">
+
+    <!-- Sol Kısım: Başlık ve Sıradaki Vakit -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ezan Vakti"
+            android:textColor="#D4AF37"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tv_next_prayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sıradaki Vakit: Yükleniyor..."
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Sağ Kısım: Geri Sayım -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/widget_timer_bg"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Chronometer
+            android:id="@+id/tv_remaining_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#D4AF37"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:countDown="true" />
+    </LinearLayout>
+
+</LinearLayout>
