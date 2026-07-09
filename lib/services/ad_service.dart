@@ -4,21 +4,46 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../main.dart';
 
 class AdService {
-  // Test Ads IDs. Replace with real ones before publishing.
+  // Canlıya alırken (App Store/Play Store'a yüklerken) bu değeri 'false' yapın.
+  static const bool useTestAds = true;
+
+  // TODO: Kendi AdMob hesabınızdan aldığınız gerçek Reklam Birimi Kimliklerini (Ad Unit IDs) buraya girin:
+  static const String _realAndroidBannerId = 'ca-app-pub-xxx/xxx'; // Android Banner ID'niz
+  static const String _realAndroidInterstitialId = 'ca-app-pub-xxx/xxx'; // Android Geçiş Reklamı ID'niz
+
+  static const String _realIOSBannerId = 'ca-app-pub-xxx/xxx'; // iOS Banner ID'niz
+  static const String _realIOSInterstitialId = 'ca-app-pub-xxx/xxx'; // iOS Geçiş Reklamı ID'niz
+
   static String get bannerAdUnitId {
-    if (Platform.isAndroid) {
-      return 'ca-app-pub-3940256099942544/6300978111';
-    } else if (Platform.isIOS) {
-      return 'ca-app-pub-3940256099942544/2934735716';
+    if (useTestAds) {
+      if (Platform.isAndroid) {
+        return 'ca-app-pub-3940256099942544/6300978111'; // Android Test Banner ID
+      } else if (Platform.isIOS) {
+        return 'ca-app-pub-3940256099942544/2934735716'; // iOS Test Banner ID
+      }
+    } else {
+      if (Platform.isAndroid) {
+        return _realAndroidBannerId;
+      } else if (Platform.isIOS) {
+        return _realIOSBannerId;
+      }
     }
     throw UnsupportedError('Unsupported platform');
   }
 
   static String get interstitialAdUnitId {
-    if (Platform.isAndroid) {
-      return 'ca-app-pub-3940256099942544/1033173712'; // Test ID
-    } else if (Platform.isIOS) {
-      return 'ca-app-pub-3940256099942544/4411468910'; // Test ID
+    if (useTestAds) {
+      if (Platform.isAndroid) {
+        return 'ca-app-pub-3940256099942544/1033173712'; // Android Test Interstitial ID
+      } else if (Platform.isIOS) {
+        return 'ca-app-pub-3940256099942544/4411468910'; // iOS Test Interstitial ID
+      }
+    } else {
+      if (Platform.isAndroid) {
+        return _realAndroidInterstitialId;
+      } else if (Platform.isIOS) {
+        return _realIOSInterstitialId;
+      }
     }
     throw UnsupportedError('Unsupported platform');
   }
