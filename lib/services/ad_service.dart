@@ -5,10 +5,10 @@ import '../main.dart';
 
 class AdService {
   // Canlıya alırken (App Store/Play Store'a yüklerken) bu değeri 'false' yapın.
-  static const bool useTestAds = true;
+  static const bool useTestAds = false;
 
-  // TODO: Kendi AdMob hesabınızdan aldığınız gerçek Reklam Birimi Kimliklerini (Ad Unit IDs) buraya girin:
-  static const String _realAndroidBannerId = 'ca-app-pub-xxx/xxx'; // Android Banner ID'niz
+  // Kendi AdMob hesabınızdan aldığınız gerçek Reklam Birimi Kimliklerini (Ad Unit IDs) buraya girin:
+  static const String _realAndroidBannerId = 'ca-app-pub-7293332986834992/8127450763'; // Android Banner ID'niz
   static const String _realAndroidInterstitialId = 'ca-app-pub-xxx/xxx'; // Android Geçiş Reklamı ID'niz
 
   static const String _realIOSBannerId = 'ca-app-pub-xxx/xxx'; // iOS Banner ID'niz
@@ -23,9 +23,13 @@ class AdService {
       }
     } else {
       if (Platform.isAndroid) {
-        return _realAndroidBannerId;
+        return _realAndroidBannerId == 'ca-app-pub-xxx/xxx'
+            ? 'ca-app-pub-3940256099942544/6300978111'
+            : _realAndroidBannerId;
       } else if (Platform.isIOS) {
-        return _realIOSBannerId;
+        return _realIOSBannerId == 'ca-app-pub-xxx/xxx'
+            ? 'ca-app-pub-3940256099942544/2934735716'
+            : _realIOSBannerId;
       }
     }
     throw UnsupportedError('Unsupported platform');
@@ -40,9 +44,13 @@ class AdService {
       }
     } else {
       if (Platform.isAndroid) {
-        return _realAndroidInterstitialId;
+        return _realAndroidInterstitialId == 'ca-app-pub-xxx/xxx'
+            ? 'ca-app-pub-3940256099942544/1033173712'
+            : _realAndroidInterstitialId;
       } else if (Platform.isIOS) {
-        return _realIOSInterstitialId;
+        return _realIOSInterstitialId == 'ca-app-pub-xxx/xxx'
+            ? 'ca-app-pub-3940256099942544/4411468910'
+            : _realIOSInterstitialId;
       }
     }
     throw UnsupportedError('Unsupported platform');
