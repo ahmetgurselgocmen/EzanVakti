@@ -9,7 +9,7 @@ class AdService {
 
   // Kendi AdMob hesabınızdan aldığınız gerçek Reklam Birimi Kimliklerini (Ad Unit IDs) buraya girin:
   static const String _realAndroidBannerId = 'ca-app-pub-7293332986834992/8127450763'; // Android Banner ID'niz
-  static const String _realAndroidInterstitialId = 'ca-app-pub-xxx/xxx'; // Android Geçiş Reklamı ID'niz
+  static const String _realAndroidInterstitialId = 'ca-app-pub-7293332986834992/3036730018'; // Android Geçiş Reklamı ID'niz
 
   static const String _realIOSBannerId = 'ca-app-pub-xxx/xxx'; // iOS Banner ID'niz
   static const String _realIOSInterstitialId = 'ca-app-pub-xxx/xxx'; // iOS Geçiş Reklamı ID'niz
